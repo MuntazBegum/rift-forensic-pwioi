@@ -1,9 +1,9 @@
 backend/
-frontend/
 venv/
 __pycache__/
-*.py
 *.pyc
+!api/
+!api/*.py
 test_upload.csv
 .env
 .env.example
