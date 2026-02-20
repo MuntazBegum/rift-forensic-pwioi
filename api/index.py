@@ -8,7 +8,7 @@ import networkx as nx
 from collections import defaultdict
 from datetime import timedelta
 
-app = FastAPI(title="Financial Forensics Engine", root_path="/api")
+app = FastAPI(title="Financial Forensics Engine")
 
 app.add_middleware(
     CORSMiddleware,
