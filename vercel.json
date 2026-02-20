@@ -1,4 +1,5 @@
 {
+    "version": 2,
     "builds": [
         {
             "src": "api/index.py",
@@ -6,9 +7,11 @@
         },
         {
             "src": "package.json",
-            "use": "@vercel/static-build",
+            "use": "@vercel/node",
             "config": {
-                "distDir": "dist"
+                "buildCommand": "npm run build",
+                "framework": "vite",
+                "outputDirectory": "dist"
             }
         }
     ],
@@ -18,8 +21,12 @@
             "dest": "/api/index.py"
         },
         {
-            "src": "/(.*)",
+            "src": "/(.*\\.(js|css|png|jpg|svg|ico|woff|woff2|ttf|map))",
             "dest": "/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/index.html"
         }
     ]
 }
